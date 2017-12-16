@@ -1,0 +1,13 @@
+(defun q4(tree1 tree2)
+  (cond
+   ((and(null tree1) (not(null tree2))) nil)
+   ((and(null tree2) (not(null tree1))) nil)
+   ((and(null tree1) (null tree2)) t)
+   ((and(not(null tree1)) (not(null tree2)))
+    (cond
+     ((not(equal(first tree1) (first tree2))) nil)
+     (t (q4 (cdr tree1) (cdr tree2)))
+    )
+   )
+  )
+)

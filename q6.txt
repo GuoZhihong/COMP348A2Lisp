@@ -1,0 +1,36 @@
+
+(defun computer-trig(&key x s (n 5))
+  (cond 
+        ((or (floatp s) (floatp n)) (error  "Decimal value values are not allowed."))
+        ((or (stringp s)(stringp n)) (error  "String values are not allowed")) 
+        ((and (= s 2) (integerp n) (or (> x 1) (<= x -1))) (error "x = ~S is not between -1 < x =< 1 when s = 2 " x))
+
+        ((and (= s 1) (integerp n))
+         (loop for i from 0 to n 
+               sum (/ (power x i) (factorial i))
+         )
+        )
+
+        ((and (= s 2) (integerp n) (<= x 1) (> x -1))
+         (loop for i from 1 to n
+               sum (/ (* (power -1 (- i 1)) (power x i)) i)
+         )
+        )
+  )
+)
+
+(defun power(x y)
+ (if (eql y 0) 1 
+   (* x (power x (- y 1))) 
+ )
+)
+
+
+
+(defun factorial(n)
+  (if (zerop n) 1
+    (* n (factorial(- n 1)))
+  )
+)
+
+

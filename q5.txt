@@ -1,0 +1,69 @@
+(1)
+(a)
+(defun tetranacciNumbers(n)
+  (do ((i 1 (+ i 1) )
+       (x 0 y)
+       (y 0 z)
+       (z 0 j)
+       (j 1  ( + x y z j) )
+      )
+      ( (= n i) x)
+   )
+)
+
+
+(b)
+(defun tetranacciNumbers(n)   
+ (cond 
+  ((eql n 1) 0) 
+  ((eql n 2) 0) 
+  ((eql n 3) 0) 
+  ((eql n 4) 1) 
+  (t 
+   (+ (+ (+ (tetranacciNumbers (- n 1) ) (tetranacciNumbers (- n 2)) ) (tetranacciNumbers ( - n 3))) (tetranacciNumbers ( - n 4)))
+  )
+ )
+)
+
+(2)
+(a)
+CL-USER 8 > TETRANACCINUMBERS '10
+29
+
+CL-USER 9 > TETRANACCINUMBERS '20
+20569
+
+CL-USER 10 > TETRANACCINUMBERS '30
+14564533
+
+CL-USER 11 > TETRANACCINUMBERS '40
+10312882481
+
+CL-USER 12 > TETRANACCINUMBERS '50
+7302365621709
+
+CL-USER 13 > TETRANACCINUMBERS '60
+5170673065591433
+
+CL-USER 14 > TETRANACCINUMBERS '70
+3661260108881759077
+
+CL-USER 15 > TETRANACCINUMBERS '80
+2592472085325239333985
+
+CL-USER 16 > TETRANACCINUMBERS '90
+1835682610171974487231869
+
+CL-USER 17 > TETRANACCINUMBERS '100
+1299813666022576563302979257
+
+up to 100, program gives right results very quickly.
+
+(b)
+CL-USER 8 > TETRANACCINUMBERS '10
+29
+
+CL-USER 9 > TETRANACCINUMBERS '20
+20569
+
+Program gives right results very slowly from 30, I think that the recursion slows down the execution of the program.

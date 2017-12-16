@@ -1,0 +1,4 @@
+a) Both functions are used to determine the sum of a input list. sum-list1 uses recursion to implement,and sum-list2 uses high order function to implement.
+
+b)Apparently, sum-list2 is more efficient and readable ,since sum-list2 only has one line of code,which simply inputs a function then applys it ,finally outputs it.
+sum-list1 uses recursion,which is very hard to see specific procedures during the compilation,and has many if-else-then conditions to judge. 

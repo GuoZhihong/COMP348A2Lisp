@@ -1,0 +1,12 @@
+(defun q2(x)
+  (cond 
+   ((null x) 0)
+   ((atom (car x))
+        (if (and (integerp(car x)) (oddp(car x)))
+          (+(car x) (q2(cdr x)))
+          (q2(cdr x))
+        )
+   )
+   ((listp (car x)) (+ (q2 (car x)) (q2(cdr x))))
+  )
+)
